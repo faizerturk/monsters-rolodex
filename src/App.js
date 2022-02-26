@@ -23,6 +23,10 @@ class App extends Component{
     
   } 
 
+  //normalde arrow fonktion kullanmasaydın this. kelimesini kullanamazdık
+  //çünkü fonksiyon class componente bind olmamıştı ayrıca bind etmek gerekirdi
+  // ama arrow funk. direk olarak yeni fonksiyonu nerdeyse (burda class componentin) içinde 
+  // oraya bind ediyoes
   handleChange = (e) => { 
     this.setState({searchField : e.target.value});
   } 
@@ -35,6 +39,7 @@ class App extends Component{
     return(
       <div className="App">
         {/* {console.log("this is monsters",this.state.monsters)} */}
+        <h1> Monsters Rolodex </h1>
         <SearchBox
           placeholder='search monsters'
           handleChange= {this.handleChange}
